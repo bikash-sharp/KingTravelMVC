@@ -1,0 +1,147 @@
+﻿@model KingTravel.Models.HotelInfoCL
+
+@{
+    ViewBag.Title = "HotelInfo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="content-header">
+    <h1>Hotel </h1>
+    <ol class="breadcrumb">
+        <li><a href="/Home"><i class="fa fa-dashboard"></i>Home</a></li>
+        <li class="active">Dashboard</li>
+    </ol>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <section class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- general form elements -->
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Select Destination</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <!-- form start -->
+                    <div class="row">
+                        <div class="col-md-7 col-sm-6">
+                            <div role="form">
+                                <div class="box-body">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                @Html.LabelFor(model => model.CountryID, new { @class = "control-label" })
+                                                @Html.DropDownListFor(model => model.CountryID, new SelectList(Model.CountryList, "Value", "Text"), "-- Select Country --", new { @class = "form-control dropdown-select" })
+                                                @Html.ValidationMessageFor(model => model.CountryID, "", new { @class = "text-danger" })
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                @Html.LabelFor(model => model.CityId, new { @class = "control-label" })
+                                                @Html.DropDownListFor(model => model.CityId, new SelectList(Model.CountryList, "Value", "Text"), "-- Select City --", new { @class = "form-control dropdown-select" })
+                                                @Html.ValidationMessageFor(model => model.CityId, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5 col-sm-6">
+                            <div role="form">
+                                <div class="box-body">
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-md-12 col-sm-12">
+                                                @Html.LabelFor(model => model.TopCityID, htmlAttributes: new { @class = "control-label" })
+                                                @Html.DropDownListFor(model => model.TopCityID, new SelectList(Model.CountryList, "Value", "Text"), "-- Select Top City --", new { @class = "form-control dropdown-select" })
+                                                @Html.ValidationMessageFor(model => model.TopCityID, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Search Hotel</h3>
+                    </div>
+                    <!-- form start -->
+                    <div role="form">
+                        <div class="box-body">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4">
+                                        @Html.LabelFor(model => model.CheckIn, new { @class = "control-label" })
+                                        @Html.TextBoxFor(model => model.CheckIn, new { @class = "form-control date-picker", @placeholder="dd/MM/yyyy" })
+                                        @Html.ValidationMessageFor(model => model.CheckIn, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-2 col-sm-2">
+                                        @Html.LabelFor(model => model.Adults, new { @class = "control-label" })
+                                        @Html.DropDownListFor(model => model.Adults, new SelectList(ViewBag.Adultlist, "Value", "Text"), new { @class = "form-control dropdown-select" })
+                                        @Html.ValidationMessageFor(model => model.Adults, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-2 col-sm-2">
+                                        @Html.LabelFor(model => model.Children, new { @class = "control-label" })
+                                        @Html.DropDownListFor(model => model.Children, new SelectList(ViewBag.Childrenlist, "Value", "Text"), new { @class = "form-control dropdown-select" })
+                                        @Html.ValidationMessageFor(model => model.Children, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-2 col-sm-2">
+                                        @Html.LabelFor(model => model.Room, new { @class = "control-label" })
+                                        @Html.DropDownListFor(model => model.Room, new SelectList(ViewBag.Roomlist, "Value", "Text"), new { @class = "form-control dropdown-select" })
+                                        @Html.ValidationMessageFor(model => model.Room, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-2 col-sm-2">
+                                        @Html.LabelFor(model => model.NightStay, new { @class = "control-label" })
+                                        @Html.DropDownListFor(model => model.NightStay, new SelectList(ViewBag.NightStayList, "Value", "Text"), new { @class = "form-control dropdown-select" })
+                                        @Html.ValidationMessageFor(model => model.NightStay, "", new { @class = "text-danger" })
+                                    </div>
+
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4">
+                                        @Html.LabelFor(model => model.GuestNationalityID, new { @class = "control-label" })
+                                        @Html.DropDownListFor(model => model.GuestNationalityID, new SelectList(Model.CountryList, "Value", "Text"), "-- Select Country --", new { @class = "form-control dropdown-select" })
+                                        @Html.ValidationMessageFor(model => model.GuestNationalityID, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-4 col-sm-4">
+                                        <label></label>
+                                        @Html.CheckBoxFor(model => model.CheckNearbyHotel, new { @class = "checkbox" }) Check Near By Hotel
+                                        @Html.ValidationMessageFor(model => model.CheckNearbyHotel, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+                        <div class="box-footer">
+                            <input type="submit" value="Search" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+}
+
+@*<script src="~/Scripts/jquery-1.10.2.min.js"></script>*@
+<script src="~/dist/js/jquery.validate.min.js"></script>
+<script src="~/dist/js/jquery.validate.unobtrusive.min.js"></script>
