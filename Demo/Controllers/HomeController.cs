@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Demo.Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,6 +15,24 @@ namespace Demo.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        [Route("NewSession")]
+        public ActionResult LogOut()
+        {
+            try
+            {
+                if (Session["Token"] != null)
+                {
+                    string result = CommonCL.Instance().Logout();
+                }
+            }
+
+            catch (Exception ex)
+            {
+
+            }
+            return RedirectToAction("Index", "Home");
         }
     }
 }

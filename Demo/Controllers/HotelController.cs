@@ -1,5 +1,6 @@
 ﻿using Demo.Common;
 using Demo.Models;
+using Demo.ViewModels;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,24 @@ namespace Demo.Controllers
                 
             }
             return View();
+        }
+        [HttpGet]
+        [Route("Search")]
+        public ActionResult Search()
+        {
+            return View();
+        }
+        [HttpPost]
+        [Route("Search")]
+        public ActionResult Search(HotelSearchViewModel Model)
+        {
+            return View("Search",Model);
+        }
+
+        [Route("Countries")]
+        public JsonResult CountryList()
+        {
+            return new JsonResult();
         }
     }
 }

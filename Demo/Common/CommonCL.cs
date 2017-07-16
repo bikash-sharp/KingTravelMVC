@@ -83,8 +83,9 @@ namespace Demo.Common
             return LoginResult;
         }
 
-        public LogoutResponse Logout()
+        public string Logout()
         {
+            String logoutresult = string.Empty;
             LogoutResponse logout = new LogoutResponse();
             try
             {
@@ -105,14 +106,31 @@ namespace Demo.Common
                 if (result != null)
                 {
                     logout = JsonConvert.DeserializeObject<LogoutResponse>(result);
+                    if(logout != null)
+                    {
+                        if(logout.Error != null)
+                        {
+                            if(logout.Error.ErrorCode > 0)
+                            {
+                                logoutresult = logout.Error.ErrorMessage;
+                            }
+                        }
+                        else
+                        {
+                            logoutresult = "success";
+                        }
+                    }
                 }
-                return logout;
+                else
+                {
+                    logoutresult = "Failed";
+                }
             }
             catch (Exception ex)
             {
-                logout.Error.ErrorMessage = ex.Message;
-                return logout;
+                logoutresult = "Failed";
             }
+            return logoutresult;
         }
     }
 }
