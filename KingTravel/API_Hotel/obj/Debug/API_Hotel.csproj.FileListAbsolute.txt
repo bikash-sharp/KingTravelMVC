@@ -1,7 +1,0 @@
-C:\Users\sourav\Documents\Visual Studio 2013\Projects\KingTravel\API_Hotel\bin\Debug\API_Hotel.dll
-C:\Users\sourav\Documents\Visual Studio 2013\Projects\KingTravel\API_Hotel\bin\Debug\API_Hotel.pdb
-C:\Users\sourav\Documents\Visual Studio 2013\Projects\KingTravel\API_Hotel\bin\Debug\KingTravel_Common.dll
-C:\Users\sourav\Documents\Visual Studio 2013\Projects\KingTravel\API_Hotel\bin\Debug\KingTravel_Common.pdb
-C:\Users\sourav\Documents\Visual Studio 2013\Projects\KingTravel\API_Hotel\obj\Debug\API_Hotel.csprojResolveAssemblyReference.cache
-C:\Users\sourav\Documents\Visual Studio 2013\Projects\KingTravel\API_Hotel\obj\Debug\API_Hotel.dll
-C:\Users\sourav\Documents\Visual Studio 2013\Projects\KingTravel\API_Hotel\obj\Debug\API_Hotel.pdb

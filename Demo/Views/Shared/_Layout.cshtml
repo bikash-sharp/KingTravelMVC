@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <title>@ViewBag.Title</title>
+    <!-- global css -->
+    <link type="text/css" href="css/app.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+    <!-- end of global css -->
+    <!--page level css-->
+    <link rel="stylesheet" href="vendors/slimmenu/css/slimmenu.min.css">
+    <link rel="stylesheet" href="css/custom_css/horizontal_menu.css">
+    <!--end of page level css-->
+</head>
+<body class="skin-coreplus">
+    <div class="preloader">
+        <div class="loader_img"><img src="img/loader.gif" alt="loading..." height="64" width="64"></div>
+    </div>
+    <!-- header logo: style can be found in header-->
+    <header class="header">
+        <nav class="navbar navbar-static-top" role="navigation">
+            <a href="\Hotel" class="logo">
+                <!-- Add the class icon to your logo image or logo icon to add the margining -->
+                <img src="img/logo.png" alt="logo" />
+            </a>
+        </nav>
+    </header>
+    
+    
+    @RenderBody()
+
+
+    <!-- global js -->
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="vendors/slimmenu/js/jquery.slimmenu.min.js"></script>
+    <script type="text/javascript" src="js/custom_js/horizontal_menu.js"></script>
+    <!-- end of page level js -->
+    @RenderSection("PageScripts", false)
+</body>
+</html>

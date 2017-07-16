@@ -1,5 +1,0 @@
-C:\Users\sourav\Documents\Visual Studio 2013\Projects\KingTravel\KingTravel_Common\bin\Debug\KingTravel_Common.dll
-C:\Users\sourav\Documents\Visual Studio 2013\Projects\KingTravel\KingTravel_Common\bin\Debug\KingTravel_Common.pdb
-C:\Users\sourav\Documents\Visual Studio 2013\Projects\KingTravel\KingTravel_Common\obj\Debug\KingTravel_Common.csprojResolveAssemblyReference.cache
-C:\Users\sourav\Documents\Visual Studio 2013\Projects\KingTravel\KingTravel_Common\obj\Debug\KingTravel_Common.dll
-C:\Users\sourav\Documents\Visual Studio 2013\Projects\KingTravel\KingTravel_Common\obj\Debug\KingTravel_Common.pdb
